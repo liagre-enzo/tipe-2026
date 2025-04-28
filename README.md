@@ -2,7 +2,7 @@
 
 Git pour le tipe 2026, thème Cycles et boucles.
 
-## Différentes idées parcourues :
+## Différentes idées parcourues
 
 A la date du 12/02 :
 
@@ -19,9 +19,9 @@ Retenu le 13/03 :
 Mèle de la th des graphes et des probas.
 À finir sur réussir à faire jouer l'ordinateur seul.
 
-## Balatro :
+## Balatro
 
-### Partie 1 : Knowing the seed.
+### Partie 1 : Knowing the seed
 
 Objectif : En connaissant la graine réussir à finir une run de Balatro grâce à un logiciel
 
@@ -40,7 +40,7 @@ On dénombre plusieurs étapes importantes :
 2. Prendre les jokers en fonction des chemins pris (i.e. ceux qui rapporte les meilleurs résultats)
 3. Si on ne tout de même pas passer une étape malgrè cela, refaire le chemin avec le joker
 
-### Partie 2 : Without the seed (#notfun)
+### Partie 2 : Without the seed
 
 Objetctif: Lancé le logiciel sur une partie random et réussir à finir le jeu
 
