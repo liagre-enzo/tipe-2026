@@ -9,7 +9,7 @@ typedef struct hand_s* hand;
 
 // Funcs
 
-hand init_hand(card*);
+hand init_hand();
 
 void free_hand(hand);
 
