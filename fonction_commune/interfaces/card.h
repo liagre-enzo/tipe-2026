@@ -1,7 +1,7 @@
 #ifndef __CARD_H__
 #define __CARD_H__
 
-#include "libraries.h"
+#include "../libraries.h"
 #include "type.h"
 
 typedef struct card_s* card;
@@ -35,7 +35,7 @@ Sortie : un entier
 Pre-condition : la carte n'est pas nulle
 Post-condition : l'entier représente la valeur de la carte
 */
-int get_val(card);
+unsigned int get_val(card);
 
 /*
 O(1)
@@ -54,5 +54,14 @@ Pre-condition : la carte n'est pas vide
 Post-condition : la carte est copié
 */
 card copy_card(card);
+
+/*
+O(1)
+Entree : une carte
+Sortie : aucune
+Pre-condition : la carte n'est pas vide
+Post-condition : les données de la carte sont affichées
+*/
+void print_card(card);
 
 #endif
