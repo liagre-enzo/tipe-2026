@@ -37,3 +37,11 @@ suit get_suit(card c){
     return c->color;
 }
 
+card copy_card(card c){
+    assert(c != NULL);
+    card new = malloc(sizeof(struct card_s));
+    new->color = c->color;
+    new->value = new->value;
+    return new;
+}
+

@@ -45,13 +45,64 @@ card access_hand(hand h, int i){
 
 void set_hand(hand h, int i, card c){
     assert(h != NULL && 0 <= i && i < h->len);
+    card tmp = h->data[i];
     h->data[i] = c;
+    free(tmp);
 }
 
 void append_hand(hand h, card c){
-    
+    assert(h != NULL);
+    if (h->len >= h->len_data){
+        card* tmp = malloc(2*(h->len_data)*sizeof(card));
+        for (int i = 0; i < h->len; i++){
+            tmp[i] = h->data[i];
+        }
+        free(h->data);
+        h->data = tmp;
+        h->len_data *= 2;
+    }
+    h->data[h->len] = c;
+    h->len ++;
 }
 
-void del_hand(hand h, int i);
+void del_hand(hand h, int i){
+    assert(h != NULL && 0 <= i && i < h->len);
+    
+    if (h->len-1 <= h->len_data / 4){
+        card* tmp_arr = malloc(((h->len_data)/2)*sizeof(card));
+        for(int j = 0; j < h->len; j++){
+            tmp_arr[i] = h->data[i];
+        }
+        h->len_data /= 2;
+        free(h->data);
+        h->data = tmp_arr;
+    }
 
-card pop_hand(hand h, int i);
+    card tmp = h->data[i];
+    for(int j = i; j < h->len - 1; j++){
+        h->data[j] = h->data[j + 1];
+    }
+    free(tmp);
+    h->len --;
+}
+
+card pop_hand(hand h, int i){
+    assert(h != NULL && 0 <= i && i < h->len);
+
+    if (h->len-1 <= h->len_data / 4){
+        card* tmp_arr = malloc(((h->len_data)/2)*sizeof(card));
+        for(int j = 0; j < h->len; j++){
+            tmp_arr[i] = h->data[i];
+        }
+        h->len_data /= 2;
+        free(h->data);
+        h->data = tmp_arr;
+    }
+
+    card tmp = h->data[i];
+    for(int j = i; j < h->len - 1; j++){
+        h->data[j] = h->data[j + 1];
+    }
+    h->len --;
+    return tmp;
+}

@@ -9,7 +9,7 @@ typedef struct deck_s deck;
 
 // Funcs
 
-deck init_deck(card*);
+deck init_deck();
 
 void free_deck(deck);
 

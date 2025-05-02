@@ -6,7 +6,7 @@ struct deck_s{
     int len_data;
 };
 
-deck init_deck(card* data);
+deck init_deck();
 
 void free_deck(deck d);
 

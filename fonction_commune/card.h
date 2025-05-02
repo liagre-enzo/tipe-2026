@@ -46,4 +46,13 @@ Post-condition : la couleur de la carte
 */
 suit get_suit(card);
 
+/*
+O(1) amorti
+Entree : une carte
+Sortie : une carte
+Pre-condition : la carte n'est pas vide
+Post-condition : la carte est copié
+*/
+card copy_card(card);
+
 #endif
