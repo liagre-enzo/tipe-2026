@@ -1,5 +1,6 @@
 #include "card.h"
 #include "type.h"
+#include <stdio.h>
 
 struct card_s {
     unsigned int value; // an integer in [1, 13] where 11 is the jack, etc

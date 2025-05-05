@@ -32,7 +32,7 @@ deck init_deck(){
     deck d = malloc(sizeof(struct deck_s));
     assert(d != NULL);
 
-    d->len = 54;
+    d->len = 52;
     d->len_data = 60;
     d->data = malloc(60*sizeof(card));
     assert(d->data != NULL);
@@ -235,7 +235,7 @@ void set_deck(deck d, unsigned int i, card c){
     change_card_count_deck(d, get_val(tmp), -1);
     change_suit_count_deck(d, get_suit(tmp), -1);
 
-    d->data[i] = c;
+    d->data[i] = copy_card(c);
     free(tmp);
 
     change_card_count_deck(d, get_val(c), 1);
@@ -258,7 +258,7 @@ void append_deck(deck d, card c){
         d->len_data *= 2;
     }
     
-    d->data[d->len] = c;
+    d->data[d->len] = copy_card(c);
     d->len ++;
 
     change_card_count_deck(d, get_val(c), 1);
@@ -327,7 +327,7 @@ void print_deck(deck d){
     assert(d != NULL);
     
     for (unsigned int i = 0; i < d->len; i++){
-        printf("%d :", i+1);
+        printf("%d\t: ", i+1);
         
         print_card(d->data[i]);
         printf("\t");

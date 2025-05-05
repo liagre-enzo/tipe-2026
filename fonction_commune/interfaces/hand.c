@@ -229,7 +229,7 @@ void set_hand(hand h, unsigned int i, card c){
     change_card_count_hand(h, get_val(tmp), -1);
     change_suit_count_hand(h, get_suit(tmp), -1);
     
-    h->data[i] = c;
+    h->data[i] = copy_card(c);
     free(tmp);
 
     change_card_count_hand(h, get_val(c), 1);
@@ -252,7 +252,7 @@ void append_hand(hand h, card c){
         h->len_data *= 2;
     }
     
-    h->data[h->len] = c;
+    h->data[h->len] = copy_card(c);
     h->len ++;
 
     change_card_count_hand(h, get_val(c), 1);
