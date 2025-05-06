@@ -1,4 +1,0 @@
-\beamer@sectionintoc {1}{Premier Paragraphe}{1}{0}{1}
-\beamer@sectionintoc {2}{Section 1}{1}{0}{2}
-\beamer@subsectionintoc {2}{1}{sub a}{1}{0}{2}
-\beamer@sectionintoc {3}{Premier Paragraphe}{2}{0}{3}

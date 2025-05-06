@@ -1,0 +1,95 @@
+\documentclass[10pt]{report}
+\usepackage{microtype}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\title{Probabilités et recherche d'une heuristique dans Balatro.}
+\author{LIAGRE Enzo}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    \chapter*{Extrait}
+    Ce document porte sur la recherche d'une heuristique dans le jeu Balatro.
+    Le jeu est en quelques sortes un poker. Il y faut avec une taille de main et de deck varibale, y marquer un certain nombre de points pour arriver à la prochaine étape.
+    \\ Le but est de pouvoir calculer l'espérence d'une variable aléatoire définie avec le nombre de points obtensible en fonction d'une certaine main.
+    Pour cela il suffit de définir l'état initial du jeu, où je jeu fonctionne similairement à un five in hand au poker.
+    La probabilité et combinatoire à chaque instant $n \in [\![2, \space 24]\!]$ ne dépend que de l'instant $n-1$.
+    \\ En finalité cette recherche sera transformé en code informatique permettant l'implémentation d'une heuristique A* sur le jeu.
+
+    \tableofcontents
+
+    \chapter{Introduction}
+    Cette étude porte sur le jeu Balatro, un jeu sorti courrent 2024, par Playstack.
+    Celle-ci vient accompagner une étude informatique pour être présenter aux oraux, des concours aux grandes écoles, de 2026.
+    Ce TIPE a pour projet d'implémeter une heuristique pour permettre la complétion automatique du jeu. 
+    
+    Balatro est un « roguelike » sur le thème du poker. Le genre roguelike signifie qu'à chque fois que le joueur perd, il reprend de zéro.
+    Le jeu s'organise en huit « mises » elles même divisées en trois manche appelées « blindes ».
+    Le but du jeu est de marquer un certain nombre de points prédéfini par manche.
+    À la fin de chaque mises (à la troisième blinde donc) le joueur affronte une « tête » qui désactive le compteur de points pour certaines cartes.
+    Balatro possède plusieurs difficultés, dans ce document je ne m'intéresserai qu'à la difficulté de base, une généralisation de l'étude aux autres difficultés pourrait faire l'objet d'un nouvel écrit.
+
+    Ce document est donc une étude probabilistique du jeu. 
+    Dans tous ce document on supposera que l'aléatoire est parfaitement implémenter en informatique.
+
+    \chapter{Étude d'un jeu de 52 cartes}
+    
+    \section{Combinatoire}
+
+    Au poker plus la main est forte, moins elle a de chances d'apparaître.
+    On se place ici dans un jeu de 52 cartes où l'on étudira le nombre de combinaisons possibles par main de Balatro.
+
+    Par ordre croissant des scores, 
+    les mains possibles sont la carte haute, la paire, deux paires, le brelan, la suite, la couleur, la main pleine (plus connu sous le nom de full house), le carré et la quinte flush (rangée avec la royale).
+    Balatro ajoute aussi trois mains normalement impossible au poker: Cinq cartes identiques, le flush house (un full house où les cartes sont de la même couleur) et le flush five (cinq cartes identiques de même couleur).
+    
+    \textbf{Les mains ajoutés:}
+    
+    Les trois mains ajoutés par le jeu demande des combinaisons de cartes impossible dans un deck de 52 cartes.
+    On a donc $0$ possibilités.
+
+    \textbf{La quinte flush:}
+
+    Une main possédant une quinte flush est déterminée par la valeur de la haute carte dans la suite.
+    Soit $k \in [\![5, \space 14]\!]$ (on prend $14$ la valeur de l'as, etc).
+
+    Si $k = 14$: \newline
+    Une telle main est entièrement déterminée par: \\
+    -la couleur, \(\binom{4}{1}\) possibilités. \\
+    -les trois cartes restantes, \(\binom{47}{3}\) possibilités. \newline
+    Par principe multiplicatif; $\binom{4}{1} \times \binom{47}{3}$ possibilités.
+    
+    Si $k = 13$: \newline
+    Une telle main est entièrement déterminée par: \\
+    -la couleur, \(\binom{4}{1}\) possibilités.
+    -les trois cartes restantes, \(\binom{46}{3}\) possibilités. En effet on ne peut pas prendre l'as sinon on compte certaines combinaisons plusieurs fois.
+    Par principe multiplicatif; $\binom{4}{1} \times \binom{46}{3}$ possibilités.
+
+    Sinon:
+    Une telle main est entièrement déterminée par:
+    -la couleur, \(\binom{4}{1}\) possibilités.
+    -les trois cartes restantes, \(\binom{47 - k}{3}\) possibilités.
+    Par principe multiplicatif; $\binom{4}{1} \times \binom{47 - k}{3}$ possibilités.
+
+    On peut donc appliquer un principe additif.
+    \[N_{quinte\_flush} = \binom{4}{1} \times \binom{47}{3} + \binom{4}{1} \times \binom{46}{3} + \sum_{k=5}^{12}\binom{4}{1} \times \binom{47 - k}{3} \]
+    
+    \section{Probabilité}
+
+    \chapter{Applications mathématiques à Balatro}
+    \section{Définition d'une variable aléatoire}
+    \section{Calculs sur l'instant initial du jeu}
+
+    \chapter{Définition formelle d'une heuristique}
+    \section{Probabilités à chaque instant}
+    \section{Définition}
+    
+    \chapter{Conclusion}
+
+    \appendix
+    \chapter{Codes}
+    \chapter{Ressouces}
+
+\end{document}
