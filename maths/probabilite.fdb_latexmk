@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1746532968.33187 "/home/enzo/Workspace/tipe-2026/maths/probabilite.tex" "probabilite.pdf" "probabilite" 1746532970.26387 0
-  "/home/enzo/Workspace/tipe-2026/maths/probabilite.tex" 1746532967.69141 5036 cc356de005c393983d85c063628a26d5 ""
+["pdflatex"] 1746712386.1504 "/home/enzo/Workspace/tipe-2026/maths/probabilite.tex" "probabilite.pdf" "probabilite" 1746712386.61261 0
+  "/home/enzo/Workspace/tipe-2026/maths/probabilite.tex" 1746712385.96613 8139 d40aab86227706edeb36bc9784c7c027 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1742685315 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1742685315 3584 2d666ecf6d466d8b007246bc2f94d9da ""
@@ -47,6 +47,8 @@
   "/usr/share/texmf-dist/tex/generic/babel/locale/fr/babel-fr.ini" 1742685315 6315 3c384dcbb287e14a2e736eeb5010b67f ""
   "/usr/share/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex" 1742685315 2142 2e5ecc022cd62b6d520b9630cf893dfe ""
   "/usr/share/texmf-dist/tex/generic/babel/txtbabel.def" 1742685315 6945 a248d839b1f26b388440c973966647b5 ""
+  "/usr/share/texmf-dist/tex/generic/iftex/iftex.sty" 1742685315 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
+  "/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty" 1742685315 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1742685315 2222 2166a1f7827be30ddc30434e5efcee1b ""
   "/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty" 1742685315 4173 d22509bc0c91281d991b2de7c88720dd ""
   "/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty" 1742685315 88370 c780f23aea0ece6add91e09b44dca2cd ""
@@ -57,6 +59,7 @@
   "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1742685315 8448 5cf247d4bd0c7d5d711bbbdf111fae2e ""
   "/usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty" 1742685315 1360 df2086bf924b14b72d6121fe9502fcdb ""
   "/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1742685315 46850 d87daedc2abdc653769a6f1067849fe0 ""
+  "/usr/share/texmf-dist/tex/latex/geometry/geometry.sty" 1742685315 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "/usr/share/texmf-dist/tex/latex/graphics/keyval.sty" 1742685315 2671 70891d50dac933918b827d326687c6e8 ""
   "/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1742685315 29785 9f93ab201fe5dd053afcc6c1bcf7d266 ""
   "/usr/share/texmf-dist/tex/latex/microtype/microtype-pdftex.def" 1742685315 49650 26a5e891c8da4553198575ba0517c0e5 ""
@@ -66,9 +69,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1742685315 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1743334209 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1743334079 4644911 5685155b52ce0c7ca8f12a0307711a65 ""
-  "probabilite.aux" 1746532970.02432 2198 ec5d0d2bda94fd44276dab98ba05896a "pdflatex"
-  "probabilite.tex" 1746532967.69141 5036 cc356de005c393983d85c063628a26d5 ""
-  "probabilite.toc" 1746532970.02832 932 9de15423b29137cb3eb6a2308abf5e83 "pdflatex"
+  "probabilite.aux" 1746712386.53913 2201 fc6236c42607ac528cd83795b3f33597 "pdflatex"
+  "probabilite.tex" 1746712385.96613 8139 d40aab86227706edeb36bc9784c7c027 ""
+  "probabilite.toc" 1746712386.54013 935 5096f823c0e32d71b6920a5066a99f7c "pdflatex"
   (generated)
   "probabilite.aux"
   "probabilite.log"

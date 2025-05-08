@@ -46,6 +46,12 @@ INPUT /usr/share/texmf-dist/tex/generic/babel/locale/fr/babel-french.tex
 INPUT /usr/share/texmf-dist/tex/generic/babel/locale/fr/babel-fr.ini
 INPUT /usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty
 INPUT /usr/share/texmf-dist/tex/latex/carlisle/scalefnt.sty
+INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+INPUT /usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./probabilite.aux

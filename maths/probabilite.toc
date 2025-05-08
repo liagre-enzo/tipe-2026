@@ -2,13 +2,13 @@
 \contentsline {chapter}{\numberline {1}Introduction}{3}{}%
 \contentsline {chapter}{\numberline {2}Étude d'un jeu de 52 cartes}{4}{}%
 \contentsline {section}{\numberline {2.1}Combinatoire}{4}{}%
-\contentsline {section}{\numberline {2.2}Probabilité}{5}{}%
-\contentsline {chapter}{\numberline {3}Applications mathématiques à Balatro}{6}{}%
-\contentsline {section}{\numberline {3.1}Définition d'une variable aléatoire}{6}{}%
-\contentsline {section}{\numberline {3.2}Calculs sur l'instant initial du jeu}{6}{}%
-\contentsline {chapter}{\numberline {4}Définition formelle d'une heuristique}{7}{}%
-\contentsline {section}{\numberline {4.1}Probabilités à chaque instant}{7}{}%
-\contentsline {section}{\numberline {4.2}Définition}{7}{}%
-\contentsline {chapter}{\numberline {5}Conclusion}{8}{}%
-\contentsline {chapter}{\numberline {A}Codes}{9}{}%
-\contentsline {chapter}{\numberline {B}Ressouces}{10}{}%
+\contentsline {section}{\numberline {2.2}Probabilité}{6}{}%
+\contentsline {chapter}{\numberline {3}Applications mathématiques à Balatro}{7}{}%
+\contentsline {section}{\numberline {3.1}Définition d'une variable aléatoire}{7}{}%
+\contentsline {section}{\numberline {3.2}Calculs sur l'instant initial du jeu}{8}{}%
+\contentsline {chapter}{\numberline {4}Définition formelle d'une heuristique}{9}{}%
+\contentsline {section}{\numberline {4.1}Probabilités à chaque instant}{9}{}%
+\contentsline {section}{\numberline {4.2}Définition}{10}{}%
+\contentsline {chapter}{\numberline {5}Conclusion}{11}{}%
+\contentsline {chapter}{\numberline {A}Codes}{12}{}%
+\contentsline {chapter}{\numberline {B}Ressouces}{13}{}%
