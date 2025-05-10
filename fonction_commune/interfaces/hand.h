@@ -34,7 +34,7 @@ Sortie : la taille
 Pre-condition : La main n'est pas vide
 Post-condition : aucune
 */
-unsigned int get_len_hand(hand);
+uint get_len_hand(hand);
 
 /*
 O(1)
@@ -43,7 +43,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre d'As dans la main
 */
-unsigned int get_ace_count_hand(hand);
+uint get_ace_count_hand(hand);
 
 /*
 O(1)
@@ -52,7 +52,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de Rois dans la main
 */
-unsigned int get_king_count_hand(hand);
+uint get_king_count_hand(hand);
 
 /*
 O(1)
@@ -61,7 +61,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de Reines dans la main
 */
-unsigned int get_queen_count_hand(hand);
+uint get_queen_count_hand(hand);
 
 /*
 O(1)
@@ -70,7 +70,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de Valets dans la main
 */
-unsigned int get_jack_count_hand(hand);
+uint get_jack_count_hand(hand);
 
 /*
 O(1)
@@ -79,7 +79,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de dix dans la main
 */
-unsigned int get_ten_count_hand(hand);
+uint get_ten_count_hand(hand);
 
 /*
 O(1)
@@ -88,7 +88,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de neufs dans la main
 */
-unsigned int get_nine_count_hand(hand);
+uint get_nine_count_hand(hand);
 
 /*
 O(1)
@@ -97,7 +97,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de huits dans la main
 */
-unsigned int get_eight_count_hand(hand);
+uint get_eight_count_hand(hand);
 
 /*
 O(1)
@@ -106,7 +106,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de septs dans la main
 */
-unsigned int get_seven_count_hand(hand);
+uint get_seven_count_hand(hand);
 
 /*
 O(1)
@@ -115,7 +115,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de six dans la main
 */
-unsigned int get_six_count_hand(hand);
+uint get_six_count_hand(hand);
 
 /*
 O(1)
@@ -124,7 +124,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de cinqs dans la main
 */
-unsigned int get_five_count_hand(hand);
+uint get_five_count_hand(hand);
 
 /*
 O(1)
@@ -133,7 +133,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de quatres dans la main
 */
-unsigned int get_four_count_hand(hand);
+uint get_four_count_hand(hand);
 
 /*
 O(1)
@@ -142,7 +142,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de trois dans la main
 */
-unsigned int get_three_count_hand(hand);
+uint get_three_count_hand(hand);
 
 /*
 O(1)
@@ -151,7 +151,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de deux dans la main
 */
-unsigned int get_two_count_hand(hand);
+uint get_two_count_hand(hand);
 
 /*
 O(1)
@@ -160,7 +160,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de cartes trefles dans la main
 */
-unsigned int get_club_count_hand(hand);
+uint get_club_count_hand(hand);
 
 /*
 O(1)
@@ -169,7 +169,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de cartes pics dans la main
 */
-unsigned int get_spade_count_hand(hand);
+uint get_spade_count_hand(hand);
 
 /*
 O(1)
@@ -178,7 +178,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de cartes coeurs dans la main
 */
-unsigned int get_heart_count_hand(hand);
+uint get_heart_count_hand(hand);
 
 /*
 O(1)
@@ -187,7 +187,7 @@ Sortie : un entier
 Pre-condition : la main n'est pas vide
 Post-condition : l'entier représente le nombre de cartes carreaux dans la main
 */
-unsigned int get_diamond_count_hand(hand);
+uint get_diamond_count_hand(hand);
 
 /*
 O(1) amorti
@@ -196,7 +196,7 @@ Sortie : une cate
 Pre-condition :la carte n'est pas vide et l'entier est strictement inférieur à la taille
 Post-condition : la carte est une copie de celle dans la main (i.e. doit être free)
 */
-card access_hand(hand, unsigned int);
+card access_hand(hand, uint);
 
 /*
 O(1) amorti
@@ -205,7 +205,7 @@ Sortie : aucune
 Pre-condition : la main n'est pas vide et l'entier est strictement inférieur à la taille
 Post-condition : la carte présente avant dans la main n'est plus accessible.
 */
-void set_hand(hand, unsigned int, card);
+void set_hand(hand, uint, card);
 
 /*
 O(1) amorti
@@ -223,7 +223,7 @@ Sorti : rien
 Pre-condition : la main n'est pas vide et l'entier est strictement inférieur à la taille
 Post-condition : la taille de la main a diminuée de 1 et la carte à l'indice choisi n'est plus accessible
 */
-void del_hand(hand, unsigned int);
+void del_hand(hand, uint);
 
 /*
 O(taille de la main) (idem que précédemment)
@@ -232,7 +232,7 @@ Sorti : une carte
 Pre-condition : la main n'est pas vide et l'entier est strictement inférieur à la taille
 Post-condition : la taille de la main a diminuée de 1 la carte est celle de l'indice choisi
 */
-card pop_hand(hand, unsigned int);
+card pop_hand(hand, uint);
 
 /*
 O(taille de la main)

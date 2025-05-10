@@ -1,7 +1,7 @@
-PWD /home/enzo/Workspace/tipe-2026/maths
+PWD /home/enzo/Workspace/tipe-2026/maths/latex
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/enzo/Workspace/tipe-2026/maths/probabilite.tex
+INPUT /home/enzo/Workspace/tipe-2026/maths/latex/probabilite.tex
 OUTPUT probabilite.log
 INPUT /usr/share/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/share/texmf-dist/tex/latex/base/report.cls

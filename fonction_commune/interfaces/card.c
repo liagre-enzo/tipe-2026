@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 struct card_s {
-    unsigned int value; // an integer in [1, 13] where 11 is the jack, etc
+    uint value; // an integer in [1, 13] where 11 is the jack, etc
     suit color;
 };
 
@@ -29,7 +29,7 @@ void free_card(card c){
     }
 }
 
-unsigned int get_val(card c){
+uint get_val(card c){
     assert (c != NULL);
     return c->value;
 }

@@ -35,7 +35,7 @@ Sortie : un entier
 Pre-condition : la carte n'est pas nulle
 Post-condition : l'entier représente la valeur de la carte
 */
-unsigned int get_val(card);
+uint get_val(card);
 
 /*
 O(1)

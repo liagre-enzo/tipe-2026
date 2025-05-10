@@ -155,7 +155,7 @@
             + \sum_{j=2}^{8}\binom{47 - k}{3} \right]
         \end{align*}
 
-        \item \textbf{le carré:}
+        \item \textbf{Le carré:}
         
         On se retrouve avec un problème similaire que celui de la Quinte Flush.
         En piochant 8 cates il est possible d'obtenir 2 carrés dans la même main.
@@ -166,13 +166,47 @@
             \item trois des quatres cartes restantes à piocher: 
             $\binom{48}{4}$ choix possibles
         \end{itemize}
+        Or avec cette méthode, on compte deux fois les mains avec deux carrés.
+        Il suffit alors de retirer ce que l'on compte en trop.
+        Un main contenant 2 carrées est entièrement déterminée par la valeur
+        des deux carrées. Ainsi il y a $\binom{13}{2}$ mains possibles.
+        
         D'après le principe multiplicatif.
         \begin{align*}
-            N_\text{carré} &\approx \binom{13}{1} \times \binom{48}{4}
+            N_\text{carré} &= \binom{13}{1} \times \binom{48}{4}
+            - \binom{13}{2}
         \end{align*}
 
-        NB:\@ cette méthode compte toujours certaines mains plusieurs fois. 
-        Il reste juste à enlever celles qui on été comptés plusieurs fois.
+        \item \textbf{Le full:}
+        
+        Un full est constitué de cinq cartes, dont une pair et un brelan.
+        Or avec huits cartes, il devient possible que l'on se retrouve avec
+        deux brelan, voir pire un carré.
+
+        Soient $b$ et $p \in [\![1, 13]\!]$ tq $b \neq p$. $b$ représent la 
+        valeur du brelan et $p$ la valeur de la paire.
+
+        \begin{itemize}
+            \item Si $b > p$:\\
+            Une main contenant un carré, de brelan $b$ et de pair $p$, est
+            entièrement déterminée par:
+            \begin{enumerate}
+                \item les couleurs du brelan: $\binom{4}{3}$ possibilités.
+                \item les couleurs de la paire: $\binom{4}{2}$ possibilités.
+            \end{enumerate}
+
+            
+            
+            \item Si $p > b$:\\
+            Une main contenant un carré, de brelan $b$ et de pair $p$, est
+            entièrement déterminée par:
+            \begin{enumerate}
+                \item les couleurs du brelan: $\binom{4}{3}$ possibilités.
+                \item les couleurs de la paire: $\binom{4}{2}$ possibilités.
+            \end{enumerate}
+
+        \end{itemize}
+        
 
     \end{description}
 

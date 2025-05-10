@@ -3,29 +3,29 @@
 
 struct deck_s{
     card* data;
-    unsigned int len;
-    unsigned int len_data;
+    uint len;
+    uint len_data;
 
     // compteur pour chaque cartes
-    unsigned int ace_count;
-    unsigned int king_count;
-    unsigned int queen_count;
-    unsigned int jack_count;
-    unsigned int ten_count;
-    unsigned int nine_count;
-    unsigned int eight_count;
-    unsigned int seven_count;
-    unsigned int six_count;
-    unsigned int five_count;
-    unsigned int four_count;
-    unsigned int three_count;
-    unsigned int two_count;
+    uint ace_count;
+    uint king_count;
+    uint queen_count;
+    uint jack_count;
+    uint ten_count;
+    uint nine_count;
+    uint eight_count;
+    uint seven_count;
+    uint six_count;
+    uint five_count;
+    uint four_count;
+    uint three_count;
+    uint two_count;
 
     // compteur pour chaque couleur
-    unsigned int club_count;
-    unsigned int spade_count;
-    unsigned int heart_count;
-    unsigned int diamond_count;
+    uint club_count;
+    uint spade_count;
+    uint heart_count;
+    uint diamond_count;
 };
 
 deck init_deck(){
@@ -56,7 +56,7 @@ deck init_deck(){
     d->heart_count = 13;
     d->diamond_count = 13;
 
-    for (unsigned int i = 0; i < 13; i++){
+    for (uint i = 0; i < 13; i++){
         d->data[i] = init_card(i+1, club);
         d->data[i + 13] = init_card(i+1, spade);
         d->data[i + 26] = init_card(i+1, heart);
@@ -66,7 +66,7 @@ deck init_deck(){
     return d;
 }
 
-void change_card_count_deck(deck d, unsigned int value, int k){
+void change_card_count_deck(deck d, uint value, int k){
     if (value == 1){
         d->ace_count += k;
     }
@@ -125,7 +125,7 @@ void change_suit_count_deck(deck d, suit s, int k){
 
 void free_deck(deck d){
     if (d != NULL){
-        for(unsigned int i = 0; i < d->len; i++){
+        for(uint i = 0; i < d->len; i++){
             free_card(d->data[i]);
         }
         free(d->data);
@@ -133,102 +133,102 @@ void free_deck(deck d){
     }
 }
 
-unsigned int get_len_deck(deck d){
+uint get_len_deck(deck d){
     assert(d != NULL);
     return d->len;
 }
 
-unsigned int get_ace_count_deck(deck d){
+uint get_ace_count_deck(deck d){
     assert(d != NULL);
     return d->ace_count;
 }
 
-unsigned int get_king_count_deck(deck d){
+uint get_king_count_deck(deck d){
     assert(d != NULL);
     return d->king_count;
 }
 
-unsigned int get_queen_count_deck(deck d){
+uint get_queen_count_deck(deck d){
     assert(d != NULL);
     return d->queen_count;
 }
 
-unsigned int get_jack_count_deck(deck d){
+uint get_jack_count_deck(deck d){
     assert(d != NULL);
     return d->jack_count;
 }
 
-unsigned int get_ten_count_deck(deck d){
+uint get_ten_count_deck(deck d){
     assert(d != NULL);
     return d->ten_count;
 }
 
-unsigned int get_nine_count_deck(deck d){
+uint get_nine_count_deck(deck d){
     assert(d != NULL);
     return d->nine_count;
 }
 
-unsigned int get_eight_count_deck(deck d){
+uint get_eight_count_deck(deck d){
     assert(d != NULL);
     return d->eight_count;
 }
 
-unsigned int get_seven_count_deck(deck d){
+uint get_seven_count_deck(deck d){
     assert(d != NULL);
     return d->seven_count;
 }
 
-unsigned int get_six_count_deck(deck d){
+uint get_six_count_deck(deck d){
     assert(d != NULL);
     return d->six_count;
 }
 
-unsigned int get_five_count_deck(deck d){
+uint get_five_count_deck(deck d){
     assert(d != NULL);
     return d->five_count;
 }
 
-unsigned int get_four_count_deck(deck d){
+uint get_four_count_deck(deck d){
     assert(d != NULL);
     return d->four_count;
 }
 
-unsigned int get_three_count_deck(deck d){
+uint get_three_count_deck(deck d){
     assert(d != NULL);
     return d->three_count;
 }
 
-unsigned int get_two_count_deck(deck d){
+uint get_two_count_deck(deck d){
     assert(d != NULL);
     return d->two_count;
 }
 
-unsigned int get_club_count_deck(deck d){
+uint get_club_count_deck(deck d){
     assert(d != NULL);
     return d->club_count;
 }
 
-unsigned int get_spade_count_deck(deck d){
+uint get_spade_count_deck(deck d){
     assert(d != NULL);
     return d->spade_count;
 }
 
-unsigned int get_heart_count_deck(deck d){
+uint get_heart_count_deck(deck d){
     assert(d != NULL);
     return d->heart_count;
 }
 
-unsigned int get_diamond_count_deck(deck d){
+uint get_diamond_count_deck(deck d){
     assert(d != NULL);
     return d->diamond_count;
 }
 
-card access_deck(deck d, unsigned int i){
+card access_deck(deck d, uint i){
     assert(d != NULL && i < d->len);
     return copy_card(d->data[i]);
 }
 
-void set_deck(deck d, unsigned int i, card c){
+void set_deck(deck d, uint i, card c){
     assert(d != NULL && i < d->len);
     
     card tmp = d->data[i];
@@ -249,7 +249,7 @@ void append_deck(deck d, card c){
         card* tmp = malloc(2*(d->len_data)*sizeof(card));
         assert(tmp != NULL);
         
-        for (unsigned int i = 0; i < d->len; i++){
+        for (uint i = 0; i < d->len; i++){
             tmp[i] = d->data[i];
         }
         
@@ -265,14 +265,14 @@ void append_deck(deck d, card c){
     change_suit_count_deck(d, get_suit(c), 1);
 }
 
-void del_deck(deck d, unsigned int i){
+void del_deck(deck d, uint i){
     assert(d != NULL && i < d->len);
     
     if (d->len-1 <= d->len_data / 4){
         card* tmp_arr = malloc(((d->len_data)/2)*sizeof(card));
         assert(tmp_arr != NULL);
         
-        for(unsigned int j = 0; j < d->len; j++){
+        for(uint j = 0; j < d->len; j++){
             tmp_arr[i] = d->data[i];
         }
         
@@ -286,7 +286,7 @@ void del_deck(deck d, unsigned int i){
     change_card_count_deck(d, get_val(tmp), -1);
     change_suit_count_deck(d, get_suit(tmp), -1);
 
-    for(unsigned int j = i; j < d->len - 1; j++){
+    for(uint j = i; j < d->len - 1; j++){
         d->data[j] = d->data[j + 1];
     }
     
@@ -294,14 +294,14 @@ void del_deck(deck d, unsigned int i){
     d->len --;
 }
 
-card pop_deck(deck d, unsigned int i){
+card pop_deck(deck d, uint i){
     assert(d != NULL && i < d->len);
 
     if (d->len-1 <= d->len_data / 4){
         card* tmp_arr = malloc(((d->len_data)/2)*sizeof(card));
         assert(tmp_arr != NULL);
         
-        for(unsigned int j = 0; j < d->len; j++){
+        for(uint j = 0; j < d->len; j++){
             tmp_arr[i] = d->data[i];
         }
         
@@ -311,7 +311,7 @@ card pop_deck(deck d, unsigned int i){
     }
 
     card tmp = d->data[i];
-    for(unsigned int j = i; j < d->len - 1; j++){
+    for(uint j = i; j < d->len - 1; j++){
         d->data[j] = d->data[j + 1];
     }
     
@@ -326,7 +326,7 @@ card pop_deck(deck d, unsigned int i){
 void print_deck(deck d){
     assert(d != NULL);
     
-    for (unsigned int i = 0; i < d->len; i++){
+    for (uint i = 0; i < d->len; i++){
         printf("%d\t: ", i+1);
         
         print_card(d->data[i]);
