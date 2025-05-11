@@ -4,6 +4,7 @@
 #include "../libraries.h"
 #include "type.h"
 #include "card.h"
+#include "hand.h"
 
 typedef struct deck_s* deck;
 
@@ -38,156 +39,21 @@ uint get_len_deck(deck);
 
 /*
 O(1)
-Entree : un deck
+Entree : un deck, un entier
 Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre d'As dans le deck
+Pre-condition : le deck n'est pas vide et l'entier représente une carte
+Post-condition : l'entier représente le nombre de cartes de valeur dans le deck
 */
-uint get_ace_count_deck(deck);
+uint get_card_count_deck(deck, uint);
 
 /*
 O(1)
-Entree : un deck
+Entree : un deck, une couleur
 Sortie : un entier
 Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de Rois dans le deck
+Post-condition : l'entier représente le nombre de cartes de valeur dans le deck
 */
-uint get_king_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de Reines dans le deck
-*/
-uint get_queen_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de Valets dans le deck
-*/
-uint get_jack_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de dix dans le deck
-*/
-uint get_ten_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de neufs dans le deck
-*/
-uint get_nine_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de huits dans le deck
-*/
-uint get_eight_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de septs dans le deck
-*/
-uint get_seven_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de six dans le deck
-*/
-uint get_six_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de cinqs dans le deck
-*/
-uint get_five_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de quatres dans le deck
-*/
-uint get_four_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de trois dans le deck
-*/
-uint get_three_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de deux dans le deck
-*/
-uint get_two_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de cartes trefles dans le deck
-*/
-uint get_club_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de cartes pics dans le deck
-*/
-uint get_spade_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de cartes coeurs dans le deck
-*/
-uint get_heart_count_deck(deck);
-
-/*
-O(1)
-Entree : un deck
-Sortie : un entier
-Pre-condition : le deck n'est pas vide
-Post-condition : l'entier représente le nombre de cartes carreaux dans le deck
-*/
-uint get_diamond_count_deck(deck);
+uint get_suit_count_deck(deck d, suit col);
 
 /*
 O(1) amorti
@@ -233,6 +99,27 @@ Pre-condition : le deck n'est pas vide et l'entier est inférieur strictement à
 Post-condition : la taille du deck a diminué de 1 et la carte à l'indice de l'entier n'est plus dans le deck
 */
 card pop_deck(deck, uint);
+
+/*
+O(taille du deck)
+Entree : un deck, un tableau d'entier et un entier
+Sortie : aucune
+Pre-condition : le deck n'est pas vide, le tableau d'entier est un tableau d'indices du deck, l'entier représente la taille du tableau, le tableau 
+DOIT être rangé dans l'ordre croissant
+Post-condition : les cartes aux indices du tableau ne sont plus accessibles
+*/
+void del_array_deck(deck, uint*, uint);
+
+/*
+Même fonction que précédement mais transforme les cartes supprimées en main
+O(taille du deck)
+Entree : un deck, un tableau d'entier et un entier
+Sortie : une main
+Pre-condition : le deck n'est pas vide, le tableau d'entier est un tableau d'indices du deck, l'entier représente la taille du tableau, le tableau 
+DOIT être rangé dans l'ordre croissant
+Post-condition : les cartes aux indices du tableau sont placées dans une main
+*/
+hand to_hand_deck(deck, uint*, uint);
 
 /*
 O(taille du deck)

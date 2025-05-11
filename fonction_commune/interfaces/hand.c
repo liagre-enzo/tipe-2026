@@ -7,25 +7,7 @@ struct hand_s{
     uint len_data;
 
     // compteur pour chaque cartes
-    uint ace_count;
-    uint king_count;
-    uint queen_count;
-    uint jack_count;
-    uint ten_count;
-    uint nine_count;
-    uint eight_count;
-    uint seven_count;
-    uint six_count;
-    uint five_count;
-    uint four_count;
-    uint three_count;
-    uint two_count;
-
-    // compteur pour chaque couleur
-    uint club_count;
-    uint spade_count;
-    uint heart_count;
-    uint diamond_count;
+    uint* card_count;
 };
 
 hand init_hand(){
@@ -37,82 +19,32 @@ hand init_hand(){
     h->data = malloc(10 * sizeof(card));
     assert(h->data != NULL);
 
-    h->ace_count = 0;
-    h->king_count = 0;
-    h->queen_count = 0;
-    h->jack_count = 0;
-    h->ten_count = 0;
-    h->nine_count = 0;
-    h->eight_count = 0;
-    h->seven_count = 0;
-    h->six_count = 0;
-    h->five_count = 0;
-    h->four_count = 0;
-    h->three_count = 0;
-    h->two_count = 0;
-    
-    h->club_count = 0;
-    h->spade_count = 0;
-    h->heart_count = 0;
-    h->diamond_count = 0;
+    h->card_count = malloc(17 * sizeof(uint));
+    assert(h->card_count != NULL);
+
+    for (uint i = 0; i < 17; i++){
+        h->card_count[i] = 0;
+    }
     
     return h;
 }
 
 void change_card_count_hand(hand h, uint value, int k){
-    if (value == 1){
-        h->ace_count += k;
-    }
-    else if(value == 2){
-        h->two_count += k;
-    }
-    else if(value == 3){
-        h->three_count += k;
-    }
-    else if(value == 4){
-        h->four_count += k;
-    }
-    else if(value == 5){
-        h->five_count += k;
-    }
-    else if(value == 6){
-        h->six_count += k;
-    }
-    else if(value == 7){
-        h->seven_count += k;
-    }
-    else if(value == 8){
-        h->eight_count += k;
-    }
-    else if(value == 9){
-        h->nine_count += k;
-    }
-    else if(value == 10){
-        h->ten_count += k;
-    }
-    else if(value == 11){
-        h->jack_count += k;
-    }
-    else if(value == 12){
-        h->queen_count += k;
-    }
-    else{
-        h->king_count += k;
-    }
+    h->card_count[value - 1] += k;
 }
 
 void change_suit_count_hand(hand h, suit s, int k){
     if(s == club){
-        h->club_count += k;
+        h->card_count[13] += k;
     }
     else if (s == spade){
-        h->spade_count += k;
+        h->card_count[14] += k;
     }
     else if (s == heart){
-        h->heart_count += k;
+        h->card_count[15] += k;
     }
     else{
-        h->diamond_count += k;
+        h->card_count[16] += k;
     }
 }
 
@@ -121,6 +53,7 @@ void free_hand(hand h){
         for (uint i = 0; i < h->len; i++){
             free_card(h->data[i]);
         }
+        free(h->card_count);
         free(h->data);
         free(h);
     }
@@ -131,89 +64,23 @@ uint get_len_hand(hand h){
     return h->len;
 }
 
-uint get_ace_count_hand(hand h){
+uint get_card_count_hand(hand h, uint value){
     assert(h != NULL);
-    return h->ace_count;
+    return h->card_count[value -1];
 }
 
-uint get_king_count_hand(hand h){
+uint get_suit_count_deck(hand h, suit col){
     assert(h != NULL);
-    return h->king_count;
-}
-
-uint get_queen_count_hand(hand h){
-    assert(h != NULL);
-    return h->queen_count;
-}
-
-uint get_jack_count_hand(hand h){
-    assert(h != NULL);
-    return h->jack_count;
-}
-
-uint get_ten_count_hand(hand h){
-    assert(h != NULL);
-    return h->ten_count;
-}
-
-uint get_nine_count_hand(hand h){
-    assert(h != NULL);
-    return h->nine_count;
-}
-
-uint get_eight_count_hand(hand h){
-    assert(h != NULL);
-    return h->eight_count;
-}
-
-uint get_seven_count_hand(hand h){
-    assert(h != NULL);
-    return h->seven_count;
-}
-
-uint get_six_count_hand(hand h){
-    assert(h != NULL);
-    return h->six_count;
-}
-
-uint get_five_count_hand(hand h){
-    assert(h != NULL);
-    return h->five_count;
-}
-
-uint get_four_count_hand(hand h){
-    assert(h != NULL);
-    return h->four_count;
-}
-
-uint get_three_count_hand(hand h){
-    assert(h != NULL);
-    return h->three_count;
-}
-
-uint get_two_count_hand(hand h){
-    assert(h != NULL);
-    return h->two_count;
-}
-
-uint get_club_count_hand(hand h){
-    assert(h != NULL);
-    return h->club_count;
-}
-
-uint get_spade_count_hand(hand h){
-    assert(h != NULL);
-    return h->spade_count;
-}
-
-uint get_heart_count_hand(hand h){
-    assert(h != NULL);
-    return h->heart_count;
-}
-
-uint get_diamond_count_hand(hand h){
-    assert(h != NULL);
-    return h->diamond_count;
+    if(col == club){
+        return h->card_count[13];
+    }
+    else if (col == spade){
+        return h->card_count[14];
+    }
+    else if (col == heart){
+        return h->card_count[15];
+    }
+    return h->card_count[16];
 }
 
 card access_hand(hand h, uint i){
@@ -311,6 +178,52 @@ card pop_hand(hand h, uint i){
 
     h->len --;
     return tmp;
+}
+
+void del_array_hand(hand h, uint* arr, uint len_arr){
+    assert(h != NULL && len_arr < h->len);
+    if(len_arr == 1){
+        del_hand(h, arr[0]);
+    }
+
+    if (h->len-len_arr <= h->len_data / 4){
+        card* tmp_arr = malloc(((h->len_data)/2)*sizeof(card));
+        assert(tmp_arr != NULL);
+        
+        for (int i = 0, i_tmp=0, i_arr = 0; i < h->len; i++){
+            if(i == arr[i_arr]){
+                change_card_count_hand(h, get_val(h->data[i]), -1);
+                change_suit_count_hand(h, get_suit(h->data[i]), -1);
+                free(h->data[i]);
+                i_arr = (i_arr + 1) % len_arr;
+            }
+            else{
+                tmp_arr[i_tmp] = h->data[i];
+                i_tmp++;
+            }
+        }
+
+        h->len_data /= 2;
+        free(h->data);
+        h->data = tmp_arr;
+    }
+    
+    else{
+        for (int i = 0, i_tmp=0, i_arr = 0; i < h->len; i++){
+            if(i == arr[i_arr]){
+                change_card_count_hand(h, get_val(h->data[i]), -1);
+                change_suit_count_hand(h, get_suit(h->data[i]), -1);
+                free(h->data[i]);
+                i_arr = (i_arr + 1) % len_arr;
+            }
+            else{
+                h->data[i_tmp] = h->data[i];
+                i_tmp++;
+            }
+        }
+    }
+
+    h->len = h->len - len_arr;
 }
 
 void print_hand(hand h){

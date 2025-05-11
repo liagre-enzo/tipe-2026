@@ -39,7 +39,6 @@ Sortie : un flotant
 Pre-condition : card_A <= card_Omage (les notation ont un sens)
 Post-condition : un réel dans [0, 1] = card_A / card_Omega
 */
-
 long double quotient(uint64 card_A, uint64 card_Omega);
 
 

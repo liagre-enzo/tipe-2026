@@ -10,7 +10,7 @@ enum suit_e {
 };
 
 enum poker_hand_e {
-    flsuh_five,      //x16
+    flush_five,      //x16
     flush_house,     //x14
     five_kind,       //x12
     royal_flush,     //x8
