@@ -110,6 +110,15 @@ Post-condition : les cartes aux indices du tableau ne sont plus accessibles
 void del_array_hand(hand, uint*, uint);
 
 /*
+O(taille de la main x log(taille de la main))
+Entree : une main
+Sortie : aucune
+Pre-condition : la main n'est pas vide
+Post-condition : la main est trié par ordre croissant des valeurs
+*/
+void sort_hand(hand);
+
+/*
 O(taille de la main)
 Entree : une main
 Sortie : aucune

@@ -10,25 +10,6 @@ struct hand_s{
     uint* card_count;
 };
 
-hand init_hand(){
-    hand h = malloc(sizeof(struct hand_s));
-    assert(h != NULL);
-    
-    h->len = 0;
-    h->len_data = 10;
-    h->data = malloc(10 * sizeof(card));
-    assert(h->data != NULL);
-
-    h->card_count = malloc(17 * sizeof(uint));
-    assert(h->card_count != NULL);
-
-    for (uint i = 0; i < 17; i++){
-        h->card_count[i] = 0;
-    }
-    
-    return h;
-}
-
 void change_card_count_hand(hand h, uint value, int k){
     h->card_count[value - 1] += k;
 }
@@ -46,6 +27,77 @@ void change_suit_count_hand(hand h, suit s, int k){
     else{
         h->card_count[16] += k;
     }
+}
+
+void swit_hand(hand arr, uint i, uint j){
+    card tmp = arr->data[i];
+    arr->data[i] = arr->data[j];
+    arr->data[j] = tmp;
+}
+
+uint leq_hand(card c1, card c2){
+    uint boolean = 0;
+    switch(get_suit(c2)){
+        case club:
+            if(get_suit(c2) == club){
+                boolean = 1;
+            }
+            break;
+        case heart:
+            if(get_suit(c2) == club || get_suit(c2) == heart){
+                boolean = 1;
+            }
+            break;
+        case spade:
+            if(get_suit(c2) == club || get_suit(c2) == heart || get_suit(c2) == spade){
+                boolean = 1;
+            }
+            break;
+        default:
+            boolean = 1;
+    }
+    return get_val(c1) < get_val(c2) || (get_val(c1) == get_val(c2) && boolean);
+}
+
+int partition_hand(hand arr, int start, int stop){
+    int k = start;
+    for (int i = start; i < stop; i++){
+        if (leq_hand(arr->data[i], arr->data[stop])){
+            swit_hand(arr, k, i);
+            k++;
+        }
+    }
+    swit_hand(arr, k, stop);
+    return k;
+}
+
+void quick_sort_hand(hand arr, int start, int stop){
+    if(start < stop){
+        int pivot = partition_hand(arr, start, stop);
+        quick_sort_hand(arr, start, pivot - 1);
+        quick_sort_hand(arr, pivot + 1, stop);
+    }
+}
+
+// Fonctions d'inteface
+
+hand init_hand(){
+    hand h = malloc(sizeof(struct hand_s));
+    assert(h != NULL);
+    
+    h->len = 0;
+    h->len_data = 10;
+    h->data = malloc(10 * sizeof(card));
+    assert(h->data != NULL);
+
+    h->card_count = malloc(17 * sizeof(uint));
+    assert(h->card_count != NULL);
+
+    for (uint i = 0; i < 17; i++){
+        h->card_count[i] = 0;
+    }
+    
+    return h;
 }
 
 void free_hand(hand h){
@@ -69,15 +121,15 @@ uint get_card_count_hand(hand h, uint value){
     return h->card_count[value -1];
 }
 
-uint get_suit_count_deck(hand h, suit col){
+uint get_suit_count_hand(hand h, suit col){
     assert(h != NULL);
     if(col == club){
         return h->card_count[13];
     }
-    else if (col == spade){
+    else if (col == heart){
         return h->card_count[14];
     }
-    else if (col == heart){
+    else if (col == spade){
         return h->card_count[15];
     }
     return h->card_count[16];
@@ -190,7 +242,7 @@ void del_array_hand(hand h, uint* arr, uint len_arr){
         card* tmp_arr = malloc(((h->len_data)/2)*sizeof(card));
         assert(tmp_arr != NULL);
         
-        for (int i = 0, i_tmp=0, i_arr = 0; i < h->len; i++){
+        for (uint i = 0, i_tmp=0, i_arr = 0; i < h->len; i++){
             if(i == arr[i_arr]){
                 change_card_count_hand(h, get_val(h->data[i]), -1);
                 change_suit_count_hand(h, get_suit(h->data[i]), -1);
@@ -209,7 +261,7 @@ void del_array_hand(hand h, uint* arr, uint len_arr){
     }
     
     else{
-        for (int i = 0, i_tmp=0, i_arr = 0; i < h->len; i++){
+        for (uint i = 0, i_tmp=0, i_arr = 0; i < h->len; i++){
             if(i == arr[i_arr]){
                 change_card_count_hand(h, get_val(h->data[i]), -1);
                 change_suit_count_hand(h, get_suit(h->data[i]), -1);
@@ -224,6 +276,11 @@ void del_array_hand(hand h, uint* arr, uint len_arr){
     }
 
     h->len = h->len - len_arr;
+}
+
+void sort_hand(hand h){
+    int stop = h->len - 1;
+    quick_sort_hand(h, 0, stop);
 }
 
 void print_hand(hand h){

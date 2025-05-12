@@ -3,10 +3,10 @@
 
 // Enums
 enum suit_e {
+    club,
     heart,
-    diamond,
     spade,
-    club
+    diamond
 };
 
 enum poker_hand_e {

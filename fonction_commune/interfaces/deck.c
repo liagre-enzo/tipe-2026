@@ -1,6 +1,7 @@
 #include "deck.h"
 #include "card.h"
 #include "hand.h"
+#include <stdio.h>
 
 struct deck_s{
     card* data;
@@ -10,6 +11,77 @@ struct deck_s{
     // compteur pour chaque carte / couleur
     uint* card_count;
 };
+
+void change_card_count_deck(deck d, uint value, int k){
+    d->card_count[value - 1] += k;
+}
+
+void change_suit_count_deck(deck d, suit s, int k){
+    if(s == club){
+        d->card_count[13] += k;
+    }
+    else if (s == heart){
+        d->card_count[14] += k;
+    }
+    else if (s == spade){
+        d->card_count[15] += k;
+    }
+    else{
+        d->card_count[16] += k;
+    }
+}
+
+void swit_deck(deck arr, uint i, uint j){
+    card tmp = arr->data[i];
+    arr->data[i] = arr->data[j];
+    arr->data[j] = tmp;
+}
+
+int leq_deck(card c1, card c2){
+    int boolean = 0;
+    switch(get_suit(c2)){
+        case club:
+            if(get_suit(c2) == club){
+                boolean = 1;
+            }
+            break;
+        case heart:
+            if(get_suit(c2) == club || get_suit(c2) == heart){
+                boolean = 1;
+            }
+            break;
+        case spade:
+            if(get_suit(c2) == club || get_suit(c2) == heart || get_suit(c2) == spade){
+                boolean = 1;
+            }
+            break;
+        default:
+            boolean = 1;
+    }
+    return get_val(c1) < get_val(c2) || (get_val(c1) == get_val(c2) && boolean);
+}
+
+int partition_deck(deck arr, int start, int stop){
+    int k = start;
+    for (int i = start; i < stop; i++){
+        if (leq_deck(arr->data[i], arr->data[stop])){
+            swit_deck(arr, k, i);
+            k++;
+        }
+    }
+    swit_deck(arr, k, stop);
+    return k;
+}
+
+void quick_sort_deck(deck arr, int start, int stop){
+    if(start < stop){
+        int pivot = partition_deck(arr, start, stop);
+        quick_sort_deck(arr, start, pivot - 1);
+        quick_sort_deck(arr, pivot + 1, stop);
+    }
+}
+
+// Fonctions d'interface
 
 deck init_deck(){
     deck d = malloc(sizeof(struct deck_s));
@@ -25,8 +97,8 @@ deck init_deck(){
 
     for (uint i = 0; i < 13; i++){
         d->data[i] = init_card(i+1, club);
-        d->data[i + 13] = init_card(i+1, spade);
-        d->data[i + 26] = init_card(i+1, heart);
+        d->data[i + 13] = init_card(i+1, heart);
+        d->data[i + 26] = init_card(i+1, spade);
         d->data[i + 39] = init_card(i+1, diamond);
         d->card_count[i] = 4;
     }
@@ -37,25 +109,6 @@ deck init_deck(){
     d->card_count[16] = 13;
 
     return d;
-}
-
-void change_card_count_deck(deck d, uint value, int k){
-    d->card_count[value - 1] += k;
-}
-
-void change_suit_count_deck(deck d, suit s, int k){
-    if(s == club){
-        d->card_count[13] += k;
-    }
-    else if (s == spade){
-        d->card_count[14] += k;
-    }
-    else if (s == heart){
-        d->card_count[15] += k;
-    }
-    else{
-        d->card_count[16] += k;
-    }
 }
 
 void free_deck(deck d){
@@ -203,7 +256,7 @@ void del_array_deck(deck d, uint* arr, uint len_arr){
         card* tmp_arr = malloc(((d->len_data)/2)*sizeof(card));
         assert(tmp_arr != NULL);
         
-        for (int i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
+        for (uint i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
             if(i == arr[i_arr]){
                 change_card_count_deck(d, get_val(d->data[i]), -1);
                 change_suit_count_deck(d, get_suit(d->data[i]), -1);
@@ -222,7 +275,7 @@ void del_array_deck(deck d, uint* arr, uint len_arr){
     }
     
     else{
-        for (int i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
+        for (uint i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
             if(i == arr[i_arr]){
                 change_card_count_deck(d, get_val(d->data[i]), -1);
                 change_suit_count_deck(d, get_suit(d->data[i]), -1);
@@ -250,7 +303,7 @@ hand to_hand_deck(deck d, uint* arr, uint len_arr){
         card* tmp_arr = malloc(((d->len_data)/2)*sizeof(card));
         assert(tmp_arr != NULL);
         
-        for (int i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
+        for (uint i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
             if(i == arr[i_arr]){
                 change_card_count_deck(d, get_val(d->data[i]), -1);
                 change_suit_count_deck(d, get_suit(d->data[i]), -1);
@@ -270,7 +323,7 @@ hand to_hand_deck(deck d, uint* arr, uint len_arr){
     }
     
     else{
-        for (int i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
+        for (uint i = 0, i_tmp=0, i_arr = 0; i < d->len; i++){
             if(i == arr[i_arr]){
                 change_card_count_deck(d, get_val(d->data[i]), -1);
                 change_suit_count_deck(d, get_suit(d->data[i]), -1);
@@ -287,6 +340,17 @@ hand to_hand_deck(deck d, uint* arr, uint len_arr){
 
     d->len = d->len - len_arr;
     return main;
+}
+
+void sort_deck(deck d){
+    int stop = d->len - 1;
+    quick_sort_deck(d, 0, stop);
+}
+
+void array_sort_deck(deck d, uint* arr, uint arr_len){
+    for (uint i = 0; i < arr_len && i < d->len; i++){
+        swit_deck(d, i, arr[i]);
+    }
 }
 
 void print_deck(deck d){

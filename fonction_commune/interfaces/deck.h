@@ -5,6 +5,7 @@
 #include "type.h"
 #include "card.h"
 #include "hand.h"
+#include <sys/types.h>
 
 typedef struct deck_s* deck;
 
@@ -120,6 +121,25 @@ DOIT être rangé dans l'ordre croissant
 Post-condition : les cartes aux indices du tableau sont placées dans une main
 */
 hand to_hand_deck(deck, uint*, uint);
+
+/*
+O(taille du deck x log(taille du deck))
+Entree : un deck
+Sortie : aucune
+Pre-condition : le deck n'est pas vide
+Post-condition : le deck est trié par ordre croissant des valeurs
+*/
+void sort_deck(deck);
+
+/*
+O(taille du deck)
+Entree : un deck, un tableau d'entiers, un entier
+Sortie : aucune
+Pre-condition : le deck n'est pas vide, le tableau est de même taille que le deck et l'entier représente la taille du tableau
+Post-condition : le deck est trié en fonction du tableau en paramètre
+*/
+void array_sort_deck(deck, uint*, uint);
+
 
 /*
 O(taille du deck)
