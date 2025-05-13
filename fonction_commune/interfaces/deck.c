@@ -37,21 +37,21 @@ void swit_deck(deck arr, uint i, uint j){
     arr->data[j] = tmp;
 }
 
-int leq_deck(card c1, card c2){
-    int boolean = 0;
+uint leq_deck(card c1, card c2){
+    uint boolean = 0;
     switch(get_suit(c2)){
         case club:
-            if(get_suit(c2) == club){
+            if(get_suit(c1) == club){
                 boolean = 1;
             }
             break;
         case heart:
-            if(get_suit(c2) == club || get_suit(c2) == heart){
+            if(get_suit(c1) == club || get_suit(c1) == heart){
                 boolean = 1;
             }
             break;
         case spade:
-            if(get_suit(c2) == club || get_suit(c2) == heart || get_suit(c2) == spade){
+            if(get_suit(c1) == club || get_suit(c1) == heart || get_suit(c1) == spade){
                 boolean = 1;
             }
             break;
