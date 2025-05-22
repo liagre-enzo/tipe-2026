@@ -3,8 +3,7 @@
 
 #include "libraries.h"
 
-typedef unsigned _BitInt(256) uint256;
-typedef unsigned long long int uint64 ;
+typedef unsigned _BitInt(1024) uint1024;
 
 /*
 O(n)
@@ -13,7 +12,7 @@ Sortie : un entier (sur 256 bits)
 Pre-condition : n < 58
 Post-condition : factoriel de l'entier en paramètre
 */
-uint256 factoriel(unsigned int n);
+uint1024 factoriel(unsigned int n);
 
 /*
 Note :
@@ -30,16 +29,8 @@ Sortie : un entier (sur 64 bits)
 Pre-conditon : k <= n < 58
 post condition: le coeff binomial k parmis n
 */
-uint64 binom(uint k, uint n);
+uint1024 binom(uint k, uint n);
 
-/*
-O(1)
-Entree : deux entiers
-Sortie : un flotant
-Pre-condition : card_A <= card_Omage (les notation ont un sens)
-Post-condition : un réel dans [0, 1] = card_A / card_Omega
-*/
-long double quotient(uint64 card_A, uint64 card_Omega);
 
 
 #endif
