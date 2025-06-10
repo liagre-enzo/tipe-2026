@@ -4,55 +4,41 @@ Git pour le tipe 2026, thème Cycles et boucles.
 
 ## Différentes idées parcourues
 
-A la date du 12/02 :
+### A la date du 12/02
 
 - La machine récursive, avec l'os le language type assembleur...
 - d'Adrien, les assistants de preuves, sujet plutôt chargé en maths
 
-A la date du 6/03 :
+### A la date du 6/03
 
 - bug de l'an 2038
 
-Retenu le 13/03 :
+### Retenu le 13/03
 
 - Comment finir un roguelike : Essaie de finir chaque partie lancer à l'aide des instructions d'un algorithme.
 Mèle de la th des graphes et des probas.
 À finir sur réussir à faire jouer l'ordinateur seul.
 
-## Balatro
+Cette idée a été abandonné courrant juin. L'une des stratégie était trop intrusive au niveau du jeu au point de demander de modifier le code source du jeu, chose que je veux absolument éviter.
 
-### Partie 1 : Knowing the seed
+### Nouvelle piste, à présenter
 
-Objectif : En connaissant la graine réussir à finir une run de Balatro grâce à un logiciel
+- Comment émuler un logiciel ?
+  - Intéressant sur le plan théorique de l'architecture matérielle.
+  - On se servira de *Pokémon Rouge* pour essayer d'implémenter du low et high level emulation. Autrement dit la partie investisement du tipe se repose sur un exemple.
 
--> Il s'agit d'un problème de recherche de chemin puisque l'on peut représenter l'état du jeu par un graphe (voir un arbre).
+## Présentation du sujet
 
-On dénombre plusieurs étapes importantes :
+### Lien avec cycles et boucles
 
-- Réussir à récupéer la seed dans la mémoire du jeu
-- À partir de la seed réussir à générer l'état du jeu
-- à partir d'un deck et de jokers donnés, trouvé la configuration qui permet de terminer une étape.
-- finir le jeu en prenant des jokers sur la route
+Le sujet n'a pas de lien direct avec le thème, comme on pourrait imaginer un sujet être autour d'un algorithme itératif par exemple. Le lien se fait sur l'idée de l'émulation; avec l'évolution des systèmes d'exploitations, la rétrocompatibilité (bien que celle-ci peut déjà être considérer comme une forme d'émulation), n'est pas viable et pose des contraintes sur l'évolution des systèmes.
 
-#### Première stratégie en tête
+Il est donc indispensable pour la conservation de logiciel de se trourner vers ces méthodes. Si l'on prend en compte le fait que les différents systèmes d'exploitations, et que le jeu-vidéo est un art depuis 2018, l'interêt de l'émulation devient presque évident; pour l'histoire de l'informatique et la conservation des arts.
 
-1. Trouver les chemins donnant le plus de points à chaque étape.
-2. Prendre les jokers en fonction des chemins pris (i.e. ceux qui rapporte les meilleurs résultats)
-3. Si on ne tout de même pas passer une étape malgrè cela, refaire le chemin avec le joker
+### Émulation
 
-### Partie 2 : Without the seed
+On se tournera pendant tous se tipe sur une image (ou ROM) de *Pokémon Rouge*, dans le but de l"émuler sur une machine opérant sous linux. Il s'agit ici d'un exemple comme un autre, on aurait bien pu prendre un système d'exploitation quelconque ou un autre logiciel, le choix ne s'est fait qu'à partir de préférences personnelles.
 
-Objetctif: Lancé le logiciel sur une partie random et réussir à finir le jeu
+On se donne alors comme projet de créer une interface pour du low-level emulation et du high-level emulation pour un jeu Gameboy.
 
--> pb de probabilités et de débombrement.
-
-On a encore plusieurs étapes importantes :
-
-- Réussir à choisir la main qui rapporte le plus de points à partir d'un deck
-- réussir à finir une manche
-- réussir un finir un boss (i.e. prendre en compte les malus)
-- faire le meilleur choix de joker
-- gérer l'argent
-- tout reconstituer
-
-⚠️ À faire en dernier car compliqué.
+NB : L'appellation ROM pour les images à émuler n'est pas sans rappeler la Read Only Memory en architecture matériel, et en effet cela a bien une corrélation; si l'on retourne dans le passer, un fichier image n'est que le contenu de la mémoire morte d'une cartouche.
