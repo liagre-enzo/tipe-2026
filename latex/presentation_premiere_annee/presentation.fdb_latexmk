@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1750665463.31417 "/home/enzo/Workspace/tipe-2026/latex/presentation_premiere_annee/presentation.tex" "presentation.pdf" "presentation" 1750665464.81489 0
-  "/home/enzo/Workspace/tipe-2026/latex/presentation_premiere_annee/presentation.tex" 1750665463.10932 6740 19881d3c330d2cf879fa5f090cbe606a ""
+["pdflatex"] 1750665820.18417 "/home/enzo/Workspace/tipe-2026/latex/presentation_premiere_annee/presentation.tex" "presentation.pdf" "presentation" 1750665821.68879 0
+  "/home/enzo/Workspace/tipe-2026/latex/presentation_premiere_annee/presentation.tex" 1750665819.95494 6740 19881d3c330d2cf879fa5f090cbe606a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1742685315 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1742685315 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ecsi1095.tfm" 1742685315 3584 1a0353d13d3e702865b76e3b1c321b5b ""
@@ -218,10 +218,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1742685315 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1743334209 5467117 e063ce8e53b0cc3d0312473583ebc51c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1743334079 4644911 5685155b52ce0c7ca8f12a0307711a65 ""
-  "presentation.aux" 1750665464.72926 4204 d9f8f2c0000af4e0811ac46addecaee5 "pdflatex"
-  "presentation.nav" 1750665464.73026 2490 b5fbb326d36e2f7605cecaca967aad76 "pdflatex"
-  "presentation.out" 1750665464.73026 761 0740b7e2bbdfcce145679b7b70ac8e99 "pdflatex"
-  "presentation.tex" 1750665463.10932 6740 19881d3c330d2cf879fa5f090cbe606a ""
+  "presentation.aux" 1750665821.60045 4204 d9f8f2c0000af4e0811ac46addecaee5 "pdflatex"
+  "presentation.nav" 1750665821.60097 2490 b5fbb326d36e2f7605cecaca967aad76 "pdflatex"
+  "presentation.out" 1750665821.60097 761 0740b7e2bbdfcce145679b7b70ac8e99 "pdflatex"
+  "presentation.tex" 1750665819.95494 6740 19881d3c330d2cf879fa5f090cbe606a ""
   (generated)
   "presentation.aux"
   "presentation.log"

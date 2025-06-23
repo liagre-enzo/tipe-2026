@@ -46,3 +46,7 @@ NB :
 - L'appellation ROM pour les images à émuler n'est pas sans rappeler la Read Only Memory en architecture matériel, et en effet cela a bien une corrélation; si l'on retourne dans le passer, un fichier image n'est que le contenu de la mémoire morte d'une cartouche.
 
 - La copie de *Pokémon Version Rouge* n'est utilisée que pour la recherche et ne sera partagé.
+
+Toutes les sources sont disponibles [ici](ressources/sources.md).
+
+La présentation de première année est disponible [ici](latex/presentation_premiere_annee/presentation.pdf) en format pdf.
