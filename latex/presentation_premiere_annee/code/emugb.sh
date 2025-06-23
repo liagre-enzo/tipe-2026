@@ -1,4 +1,4 @@
-# Permet d'éxecuter la compilation dans n'importe quel répertoire
+# Permet d'executer la compilation dans n'importe quel repertoire
 pwd > ~/pwd_tmp_emugb_sh.txt
 
 # Compilation cpu
@@ -9,13 +9,13 @@ gcc -Werror -Wall -Wextra -fsanitize=address -c CPU.c
 cd ../../Gameboy
 gcc -Werror -Wall -Wextra -fsanitize=address -c Gameboy.c
 
-# Compilation de l'émulateur
+# Compilation de l'emulateur
 cd ..
 gcc -Werror -Wall -Wextra -fsanitize=address -o emugb SoC/CPU/CPU.o Gameboy/Gameboy.o emu.c
 
 # ouverture de la rom
 ./emugb $@ #/!\ requiert un chemin absolu
 
-#retour au point de départ
+# retour au point de depart
 echo ~/pwd_tmp_emugb_sh.txt | cd
 rm ~/pwd_tmp_emugb_sh.txt

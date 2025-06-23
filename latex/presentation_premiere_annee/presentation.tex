@@ -12,6 +12,54 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[autolanguage]{numprint}
+\usepackage{listings}
+
+\usepackage{xcolor}
+\definecolor{commentgreen}{RGB}{2,112,10}
+\definecolor{eminence}{RGB}{108,48,130}
+\definecolor{weborange}{RGB}{255,165,0}
+\definecolor{frenchplum}{RGB}{129,20,83}
+
+\lstset{
+    language=C,
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    %upquote=true,
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    stringstyle=\color{red},
+    basicstyle=\tiny\ttfamily, % basic font setting
+    emph={int,char,double,float,unsigned,void,bool},
+    emphstyle={\color{blue}},
+    escapechar=\&,
+    % keyword highlighting
+    classoffset=1, % starting new class
+    otherkeywords={>,<,.,;,-,!,=,~},
+    morekeywords={>,<,.,;,-,!,=,~},
+    keywordstyle=\color{weborange},
+    classoffset=0,
+}
+
+\lstset{
+    language=bash,
+    frame=tb,
+    tabsize=4,
+    showstringspaces=false,
+    %upquote=true,
+    commentstyle=\color{commentgreen},
+    keywordstyle=\color{eminence},
+    stringstyle=\color{red},
+    basicstyle=\tiny\ttfamily, % basic font setting
+    emphstyle={\color{blue}},
+    escapechar=\&,
+    % keyword highlighting
+    classoffset=1, % starting new class
+    otherkeywords={>,<,.,;,-,!,=,~},
+    morekeywords={>,<,.,;,-,!,=,~},
+    keywordstyle=\color{weborange},
+    classoffset=0,
+}
 
 \title{TIPE}
 \author{L'émulation et la conservation des logiciels}
@@ -31,27 +79,6 @@
     
     \section{Présentation du sujet}
     \subsection{Introduction}
-    \begin{frame}{Introduction}
-        \begin{definition}[Émulation]
-            L'émulation est le processus par lequel une application reproduit le fonctionnement d'une machine ou d'un autre logiciel.
-        \end{definition}
-        \color{white} Exemples:
-        \begin{itemize}
-            \item[\color{white}] \color{white} Un émulateur de terminal
-            \item[\color{white}] \color{white} Une machine virtuelle
-        \end{itemize}
-    \end{frame}
-
-    \begin{frame}{Introduction}
-        \begin{definition}[Émulation]
-            L'émulation est le processus par lequel une application reproduit le fonctionnement d'une machine ou d'un autre logiciel.
-        \end{definition}
-        Exemples:
-        \begin{itemize}
-            \item Un émulateur de terminal
-            \item[\color{white}] \color{white} Une machine virtuelle
-        \end{itemize}
-    \end{frame}
 
     \begin{frame}{Introduction}
         \begin{block}{Émulation}
@@ -64,39 +91,10 @@
         \end{itemize}
     \end{frame}
 
-    \subsection{Principe}
-    \begin{frame}{Principe}
-        On distingue deux méthodes pour l'émulation.
-        \begin{enumerate}
-            \item[\color{white}] \color{white} L'émulation de bas niveau (Low-level emulation)
-            \begin{itemize}
-                \item[\color{white}] \color{white} $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
-            \end{itemize}
-            \item[\color{white}] \color{white} L'émulation de haut niveau (High-level emulation)
-            \begin{itemize}
-                \item[\color{white}] \color{white} $\hookrightarrow$ On reproduit ce que la machine permet.
-            \end{itemize}
-        \end{enumerate}
-        {\color{white} passage de ligne}
-
-        \color{white} On s'intéresse dans un premier temps à l'émulation de bas niveau
-    \end{frame}
-
-    \begin{frame}{Principe}
-        On distingue deux méthodes pour l'émulation.
-        \begin{enumerate}
-            \item L'émulation de bas niveau (Low-level emulation)
-            \begin{itemize}
-                \item[\color{white}] $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
-            \end{itemize}
-            \item[\color{white}] \color{white} L'émulation de haut niveau (High-level emulation)
-            \begin{itemize}
-                \item[\color{white}] \color{white} $\hookrightarrow$ On reproduit ce que la machine permet.
-            \end{itemize}
-        \end{enumerate}
-        {\color{white} passage de ligne}
-        
-        \color{white} On s'intéresse dans un premier temps à l'émulation de bas niveau
+    \begin{frame}{Intérêt}
+        \begin{center} 
+            \includegraphics[width=1\textwidth]{images/erreur_permission.png}
+        \end{center}   
     \end{frame}
 
     \begin{frame}{Principe}
@@ -112,29 +110,57 @@
             \end{itemize}
         \end{enumerate}
         {\color{white} passage de ligne}
-        
-        \color{white} On s'intéresse dans un premier temps à l'émulation de bas niveau
+
+        On s'intéressera pour l'instant à l'émulation de bas niveau.
     \end{frame}
 
-    \begin{frame}{Principe}
-        On distingue deux méthodes pour l'émulation.
-        \begin{enumerate}
-            \item L'émulation de bas niveau (Low-level emulation)
-            \begin{itemize}
-                \item[\color{white}] $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
-            \end{itemize}
-            \item L'émulation de haut niveau (High-level emulation)
-            \begin{itemize}
-                \item[\color{white}] $\hookrightarrow$ On reproduit ce que la machine permet.
-            \end{itemize}
-        \end{enumerate}
-        {\color{white} passage de ligne}
-        
-        On s'intéresse dans un premier temps à l'émulation de bas niveau
-    \end{frame}
-
-    \section{Low-level emulation}    
+    \section{Low-level emulation}
+    \subsection{Méthode}
     \begin{frame}{Low-level emulation (LLE)}
+        \begin{exampleblock}{Méthode}
+            On étudie le sytème afin de savoir comment les composants fonctionnement, puis on les implémentes.
+        \end{exampleblock}
+        $\hookrightarrow$ On implémente des machines entières donc on privilégie un language de bas niveau.
+    \end{frame}
+
+    \subsection{Exemple: La GameBoy}
+    \begin{frame}{L'émulation d'un jeu GameBoy}
+        
+    \end{frame}
+
+    \subsection{Exécution}
+    \begin{frame}{Exécution}
+        \includegraphics[width=1\textwidth]{images/execution.png}
+    \end{frame}
+
+    \section{Conclusion}
+    \begin{frame}{Conclusion}
+        En suivant la même méthode, on peut, en théorie, émuler n'importe quel logiciel.
+
+        {\color{white} passage de ligne}
+
+        Cependant, reproduire la machine en entier pose des problèmes de performance.
+    \end{frame}
+
+    \begin{frame}{En prolongement}
+        La suite du TIPE se portera sur l'émulation de haut niveau.
+
+        {\color{white} passage de ligne}
+
+        On pourrait envisager
+        \begin{itemize}
+            \item implementer l'émulateur en entier
+            \item effectuer des test de performances entre LLE / HLE
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Du négatif}
+        Il rest important de remarquer que
+        \begin{itemize}
+            \item Ce TIPE est très empirique
+            \item L'émulation ne serait utile si tous les sytèmes avait un même systeme d'exploitation
+            \item Il est légalement difficile de travailler sur ce sujet
+        \end{itemize}
     \end{frame}
 
     \appendix
@@ -144,7 +170,7 @@
             \item \guillemotleft\ Stack processor architecture and development methods suitable for dependable
 applications.\ \guillemotright\ Mehdi Jallouli, Camille Diou, Fabrice Monteiro, Abbas Dandache.
             \item \guillemotleft\ Game Boy: Complete Technical Reference \guillemotright\ {\color{blue}\underline{\url{https://gekkio.fi}}}, Révision 164.
-            \item L'article \guillemotleft\ Game Boy / Color Architecture - A Practical Analysis \guillemotright\ écrit par Rodrigo Copetti {\color{blue} \underline{\href{https://www.copetti.org/writings/consoles/game-boy/}{www.copetti.org/writings/consoles/game-boy/}}}.
+            \item L'article \guillemotleft\ Game Boy / Color Architecture \_ A Practical Analysis \guillemotright\ écrit par Rodrigo Copetti {\color{blue} \underline{\href{https://www.copetti.org/writings/consoles/game-boy/}{www.copetti.org/writings/consoles/game-boy/}}}.
             \item La série \guillemotleft\ The Game Boy, a hardware autopsy \guillemotright\ par JackTech {\color{blue} \underline{\url{https://www.youtube.com/@jacktech5101}}}.
         \end{enumerate}
     \end{frame}
@@ -153,12 +179,39 @@ applications.\ \guillemotright\ Mehdi Jallouli, Camille Diou, Fabrice Monteiro, 
         \begin{enumerate}
             \item Architecture du processeur \guillemotleft\ Sharp SM83 \guillemotright\ {\color{blue} \underline{\url{https://gbdev.io/gb-opcodes//optables/}}}.
             \item Fichier ROM d'une cartouche de \textit{Pokémon Version Rouge} développé par Game Freak.
-            \item Quelques illustrations de \guillemotleft\ Game Boy / Color Architecture - A Practical Analysis \guillemotright\ écrit par Rodrigo Copetti {\color{blue} \underline{\href{https://www.copetti.org/writings/consoles/game-boy/}{www.copetti.org/writings/consoles/game-boy/}}}.
+            \item Quelques illustrations de \guillemotleft\ Game Boy / Color Architecture \_ A Practical Analysis \guillemotright\ écrit par Rodrigo Copetti {\color{blue} \underline{\href{https://www.copetti.org/writings/consoles/game-boy/}{www.copetti.org/writings/consoles/game-boy/}}}.
         \end{enumerate}
     \end{frame}
 
     \section{Code}
-    \begin{frame}{CPU.c}
+    \begin{frame}{emugb.sh}
+        \lstset{language=bash}
+        \lstinputlisting[breaklines]{code/emugb.sh}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{CPU.h}
+        \lstset{language=C}
+        \lstinputlisting[breaklines]{code/CPU.h}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{CPU.c}
+        \lstinputlisting[breaklines]{code/CPU.c}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{SoC.h}
+        \lstinputlisting[breaklines]{code/SoC.h}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{Gameboy.h}
+        \lstinputlisting[breaklines]{code/Gameboy.h}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{Gameboy.c}
+        \lstinputlisting[breaklines]{code/Gameboy.c}
+    \end{frame}
+
+    \begin{frame}[allowframebreaks]{emu.c}
+        \lstinputlisting[breaklines]{code/emu.c}
     \end{frame}
     
 \end{document}
