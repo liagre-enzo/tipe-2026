@@ -1,32 +1,163 @@
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%   TIPE Liagre Enzo
+%   MPI Faidherbe
+%
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 \documentclass{beamer}
-\usetheme{Hannover}
+\usetheme{Berkeley}
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[autolanguage]{numprint}
 
-\title{Idée de TIPE pour l'année 2026}
-\author{LIAGRE Enzo}
-\date{\today}
+\title{TIPE}
+\author{L'émulation et la conservation des logiciels}
+\institute{}
+\date{\scriptsize LIAGRE Enzo}
 
 \begin{document}
     
-    \frame{\titlepage}
-
     \begin{frame}
-        \tableofcontents
+        \titlepage\
     \end{frame}
 
-    \section{Introduction au sujet}
-    \begin{frame}
-        \frametitle{Introduction au sujet}
+    
+    %\begin{frame}{Tables des matières}
+    %    \tableofcontents
+    %\end{frame}
+    
+    \section{Présentation du sujet}
+    \subsection{Introduction}
+    \begin{frame}{Introduction}
+        \begin{definition}[Émulation]
+            L'émulation est le processus par lequel une application reproduit le fonctionnement d'une machine ou d'un autre logiciel.
+        \end{definition}
+        \color{white} Exemples:
+        \begin{itemize}
+            \item[\color{white}] \color{white} Un émulateur de terminal
+            \item[\color{white}] \color{white} Une machine virtuelle
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Introduction}
+        \begin{definition}[Émulation]
+            L'émulation est le processus par lequel une application reproduit le fonctionnement d'une machine ou d'un autre logiciel.
+        \end{definition}
+        Exemples:
+        \begin{itemize}
+            \item Un émulateur de terminal
+            \item[\color{white}] \color{white} Une machine virtuelle
+        \end{itemize}
+    \end{frame}
+
+    \begin{frame}{Introduction}
+        \begin{block}{Émulation}
+            L'émulation est le processus par lequel une application reproduit le fonctionnement d'une machine ou d'un autre logiciel.
+        \end{block}
+        Exemples:
+        \begin{itemize}
+            \item Un émulateur de terminal
+            \item Une machine virtuelle
+        \end{itemize}
+    \end{frame}
+
+    \subsection{Principe}
+    \begin{frame}{Principe}
+        On distingue deux méthodes pour l'émulation.
+        \begin{enumerate}
+            \item[\color{white}] \color{white} L'émulation de bas niveau (Low-level emulation)
+            \begin{itemize}
+                \item[\color{white}] \color{white} $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
+            \end{itemize}
+            \item[\color{white}] \color{white} L'émulation de haut niveau (High-level emulation)
+            \begin{itemize}
+                \item[\color{white}] \color{white} $\hookrightarrow$ On reproduit ce que la machine permet.
+            \end{itemize}
+        \end{enumerate}
+        {\color{white} passage de ligne}
+
+        \color{white} On s'intéresse dans un premier temps à l'émulation de bas niveau
+    \end{frame}
+
+    \begin{frame}{Principe}
+        On distingue deux méthodes pour l'émulation.
+        \begin{enumerate}
+            \item L'émulation de bas niveau (Low-level emulation)
+            \begin{itemize}
+                \item[\color{white}] $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
+            \end{itemize}
+            \item[\color{white}] \color{white} L'émulation de haut niveau (High-level emulation)
+            \begin{itemize}
+                \item[\color{white}] \color{white} $\hookrightarrow$ On reproduit ce que la machine permet.
+            \end{itemize}
+        \end{enumerate}
+        {\color{white} passage de ligne}
+        
+        \color{white} On s'intéresse dans un premier temps à l'émulation de bas niveau
+    \end{frame}
+
+    \begin{frame}{Principe}
+        On distingue deux méthodes pour l'émulation.
+        \begin{enumerate}
+            \item L'émulation de bas niveau (Low-level emulation)
+            \begin{itemize}
+                \item[\color{white}] $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
+            \end{itemize}
+            \item L'émulation de haut niveau (High-level emulation)
+            \begin{itemize}
+                \item[\color{white}] $\hookrightarrow$ On reproduit ce que la machine permet.
+            \end{itemize}
+        \end{enumerate}
+        {\color{white} passage de ligne}
+        
+        \color{white} On s'intéresse dans un premier temps à l'émulation de bas niveau
+    \end{frame}
+
+    \begin{frame}{Principe}
+        On distingue deux méthodes pour l'émulation.
+        \begin{enumerate}
+            \item L'émulation de bas niveau (Low-level emulation)
+            \begin{itemize}
+                \item[\color{white}] $\hookrightarrow$ On reproduit le fonctionnement de la machine en entier.
+            \end{itemize}
+            \item L'émulation de haut niveau (High-level emulation)
+            \begin{itemize}
+                \item[\color{white}] $\hookrightarrow$ On reproduit ce que la machine permet.
+            \end{itemize}
+        \end{enumerate}
+        {\color{white} passage de ligne}
+        
+        On s'intéresse dans un premier temps à l'émulation de bas niveau
     \end{frame}
 
     \section{Low-level emulation}    
-    \begin{frame}
+    \begin{frame}{Low-level emulation (LLE)}
     \end{frame}
 
-    \section{High-level emulation}
-    \begin{frame}    
+    \appendix
+    \section{Références}
+    \begin{frame}{Bibliographie}
+        \begin{enumerate}
+            \item \guillemotleft\ Stack processor architecture and development methods suitable for dependable
+applications.\ \guillemotright\ Mehdi Jallouli, Camille Diou, Fabrice Monteiro, Abbas Dandache.
+            \item \guillemotleft\ Game Boy: Complete Technical Reference \guillemotright\ {\color{blue}\underline{\url{https://gekkio.fi}}}, Révision 164.
+        \end{enumerate}
+    \end{frame}
+
+    \begin{frame}{Ressources}
+        \begin{enumerate}
+            \item Architecture du processeur \guillemotleft\ Sharp SM83 \guillemotright\ {\color{blue} \underline{\url{https://gbdev.io/gb-opcodes//optables/}}}.
+            \item Fichier ROM d'une cartouche de \textit{Pokémon Version Rouge} développé par Game Freak.
+            \item La série \guillemotleft\ The Game Boy, a hardware autopsy \guillemotright\ par JackTech.
+            \item Photo de la carte-mère de la GameBoy par {\color{blue} \underline{\href{https://www.copetti.org/writings/consoles/game-boy/}{Rodrigo Copetti}}}.
+        \end{enumerate}
+    \end{frame}
+
+    \section{Code}
+    \begin{frame}{CPU.c}
     \end{frame}
     
 \end{document}

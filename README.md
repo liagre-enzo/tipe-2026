@@ -37,8 +37,12 @@ Il est donc indispensable pour la conservation de logiciel de se trourner vers c
 
 ### Émulation
 
-On se tournera pendant tous se tipe sur une image (ou ROM) de *Pokémon Rouge*, dans le but de l"émuler sur une machine opérant sous linux. Il s'agit ici d'un exemple comme un autre, on aurait bien pu prendre un système d'exploitation quelconque ou un autre logiciel, le choix ne s'est fait qu'à partir de préférences personnelles.
+On se tournera pendant tous se tipe sur une image (ou ROM) de *Pokémon Version Rouge* (développé par Game Freak), dans le but de l"émuler sur une machine opérant sous linux. Il s'agit ici d'un exemple comme un autre, on aurait bien pu prendre un système d'exploitation quelconque ou un autre logiciel, le choix ne s'est fait qu'à partir de préférences personnelles.
 
 On se donne alors comme projet de créer une interface pour du low-level emulation et du high-level emulation pour un jeu Gameboy.
 
-NB : L'appellation ROM pour les images à émuler n'est pas sans rappeler la Read Only Memory en architecture matériel, et en effet cela a bien une corrélation; si l'on retourne dans le passer, un fichier image n'est que le contenu de la mémoire morte d'une cartouche.
+NB :
+
+- L'appellation ROM pour les images à émuler n'est pas sans rappeler la Read Only Memory en architecture matériel, et en effet cela a bien une corrélation; si l'on retourne dans le passer, un fichier image n'est que le contenu de la mémoire morte d'une cartouche.
+
+- La copie de *Pokémon Version Rouge* n'est utilisée que pour la recherche et ne sera partagé.
