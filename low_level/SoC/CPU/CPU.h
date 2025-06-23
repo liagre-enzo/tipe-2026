@@ -1,19 +1,23 @@
 #ifndef __CPU_H__
 #define __CPU_H__
 
-#include <stdint.h>
+// Inclusions
+////////////////////////////
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <assert.h>
+
+// types
+////////////////////////////
 
 typedef uint8_t u8;
-
 typedef uint16_t u16;
-
-// Inplémentation du Sharp SM83 CPU
 
 typedef struct cpu_s* cpu;
 
-enum mem_empl_e{
+typedef enum{
     A = -10,    //register A
     F = -9,     //register F
     B = -8,     //register B
@@ -24,14 +28,31 @@ enum mem_empl_e{
     L = -3,
     SP = -2,
     PC = -1,
-};
+} mem_empl ;
 
-typedef enum mem_empl_e mem_empl ;
 
-// Fonction de construction
+// fonctions
+////////////////////////////
+
+// constructeur
 cpu init_cpu();
 
-// Fonction de destruction
+// accesseur
+u8 get_reg(cpu, mem_empl);
+
+u16 get_SP(cpu);
+
+u16 get_PC(cpu);
+
+// accesseur
+void set_reg(cpu, mem_empl, u8);
+
+void set_SP(cpu, u16);
+
+void set_PC(cpu, u16);
+
+
+// destructeur
 void free_cpu(cpu);
 
 

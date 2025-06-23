@@ -7,6 +7,6 @@
 
 void print_cpu_contents(cpu);
 
-void print_mem_emp(enum mem_empl_e);
+void print_mem_emp(mem_empl);
 
 #endif
