@@ -429,6 +429,16 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
+INPUT ./images/carte_mere.png
+INPUT ./images/carte_mere.png
+INPUT ./images/carte_mere.png
+INPUT ./images/carte_mere.png
+INPUT ./images/carte_mere.png
+INPUT ./images/diagrame.png
+INPUT ./images/diagrame.png
+INPUT ./images/diagrame.png
+INPUT ./images/diagrame.png
+INPUT ./images/diagrame.png
 INPUT ./images/execution.png
 INPUT ./images/execution.png
 INPUT ./images/execution.png

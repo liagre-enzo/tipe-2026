@@ -5,7 +5,8 @@
 \beamer@sectionintoc {2}{Low-level emulation}{5}{0}{2}
 \beamer@subsectionintoc {2}{1}{Méthode}{5}{0}{2}
 \beamer@subsectionintoc {2}{2}{Exemple: La GameBoy}{6}{0}{2}
-\beamer@subsectionintoc {2}{3}{Exécution}{7}{0}{2}
-\beamer@sectionintoc {3}{Conclusion}{8}{0}{3}
-\beamer@sectionintoc {4}{Références}{11}{1}{4}
-\beamer@sectionintoc {5}{Code}{13}{1}{5}
+\beamer@subsectionintoc {2}{3}{Implémentation}{8}{0}{2}
+\beamer@subsectionintoc {2}{4}{Exécution}{12}{0}{2}
+\beamer@sectionintoc {3}{Conclusion}{13}{0}{3}
+\beamer@sectionintoc {4}{Références}{16}{1}{4}
+\beamer@sectionintoc {5}{Code}{18}{1}{5}
