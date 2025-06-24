@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.30)  24 JUN 2025 10:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.30)  24 JUN 2025 13:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -804,25 +804,25 @@ LaTeX Info: Redefining \up on input line 69.
 [2
 
 ]
-<images/erreur_permission.png, id=145, 1445.4pt x 376.40625pt>
+<images/erreur_permission.png, id=133, 1445.4pt x 376.40625pt>
 File: images/erreur_permission.png Graphic file (type png)
 <use images/erreur_permission.png>
-Package pdftex.def Info: images/erreur_permission.png  used on input line 98.
+Package pdftex.def Info: images/erreur_permission.png  used on input line 97.
 (pdftex.def)             Requested size: 290.74263pt x 75.71066pt.
 
 
 [3
 
  <./images/erreur_permission.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 114.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 114.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 115.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 114.
  (/usr/share/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
 )
@@ -834,20 +834,20 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 [5
 
 ]
-<images/carte_mere.png, id=258, 1124.2pt x 1033.8625pt>
+<images/carte_mere.png, id=239, 1124.2pt x 1033.8625pt>
 File: images/carte_mere.png Graphic file (type png)
 <use images/carte_mere.png>
-Package pdftex.def Info: images/carte_mere.png  used on input line 131.
+Package pdftex.def Info: images/carte_mere.png  used on input line 129.
 (pdftex.def)             Requested size: 203.51895pt x 187.15994pt.
 
 
 [6
 
  <./images/carte_mere.png>]
-<images/diagrame.png, id=296, 1266.7325pt x 1042.89626pt>
+<images/diagrame.png, id=276, 1266.7325pt x 1042.89626pt>
 File: images/diagrame.png Graphic file (type png)
 <use images/diagrame.png>
-Package pdftex.def Info: images/diagrame.png  used on input line 137.
+Package pdftex.def Info: images/diagrame.png  used on input line 135.
 (pdftex.def)             Requested size: 232.59499pt x 191.48468pt.
 
 
@@ -866,42 +866,42 @@ Package pdftex.def Info: images/diagrame.png  used on input line 137.
 [10
 
 ]
-Overfull \hbox (4.36829pt too wide) in paragraph at lines 241--241
+Overfull \hbox (4.36829pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 A| 
  []
 
 
-Overfull \hbox (3.35497pt too wide) in paragraph at lines 241--241
+Overfull \hbox (3.35497pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 F| 
  []
 
 
-Overfull \hbox (4.3881pt too wide) in paragraph at lines 241--241
+Overfull \hbox (4.3881pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 B| 
  []
 
 
-Overfull \hbox (3.35497pt too wide) in paragraph at lines 241--241
+Overfull \hbox (3.35497pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 F| 
  []
 
 
-Overfull \hbox (4.10568pt too wide) in paragraph at lines 241--241
+Overfull \hbox (4.10568pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 C| 
  []
 
 
-Overfull \hbox (3.35497pt too wide) in paragraph at lines 241--241
+Overfull \hbox (3.35497pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 F| 
  []
 
 
-Overfull \hbox (4.99255pt too wide) in paragraph at lines 241--241
+Overfull \hbox (4.99255pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 D| 
  []
 
 
-Overfull \hbox (3.65718pt too wide) in paragraph at lines 241--241
+Overfull \hbox (3.65718pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 E| 
  []
 
@@ -910,10 +910,10 @@ Overfull \hbox (3.65718pt too wide) in paragraph at lines 241--241
 [11
 
 ]
-<images/execution.png, id=478, 1297.84875pt x 514.17094pt>
+<images/execution.png, id=447, 1297.84875pt x 514.17094pt>
 File: images/execution.png Graphic file (type png)
 <use images/execution.png>
-Package pdftex.def Info: images/execution.png  used on input line 247.
+Package pdftex.def Info: images/execution.png  used on input line 245.
 (pdftex.def)             Requested size: 290.74263pt x 115.18135pt.
 
 
@@ -1023,21 +1023,21 @@ LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `presentation.out' has not changed.
-(rerunfilecheck)             Checksum: 07772E4A656214538073AAEE65B12596;1248.
+(rerunfilecheck)             Checksum: 86CBD0FBC9E9D3905A82CFF789DE9836;1034.
  ) 
 Here is how much of TeX's memory you used:
- 26736 strings out of 473190
- 495618 string characters out of 5722593
+ 26728 strings out of 473190
+ 495525 string characters out of 5722593
  1332130 words of memory out of 5000000
- 49380 multiletter control sequences out of 15000+600000
+ 49374 multiletter control sequences out of 15000+600000
  576692 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,471b,1356s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsi1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0500.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0600.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on build/presentation.pdf (32 pages, 1316225 bytes).
+Output written on build/presentation.pdf (32 pages, 1314055 bytes).
 PDF statistics:
- 1215 PDF objects out of 1440 (max. 8388607)
- 1134 compressed objects within 12 object streams
- 76 named destinations out of 1000 (max. 500000)
- 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1176 PDF objects out of 1200 (max. 8388607)
+ 1096 compressed objects within 11 object streams
+ 74 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
