@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.30)  24 JUN 2025 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.3.30)  24 JUN 2025 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -885,18 +885,8 @@ Overfull \hbox (4.3881pt too wide) in paragraph at lines 239--239
  []
 
 
-Overfull \hbox (3.35497pt too wide) in paragraph at lines 239--239
-[]|\T1/cmss/m/n/10.95 F| 
- []
-
-
 Overfull \hbox (4.10568pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 C| 
- []
-
-
-Overfull \hbox (3.35497pt too wide) in paragraph at lines 239--239
-[]|\T1/cmss/m/n/10.95 F| 
  []
 
 
@@ -907,6 +897,16 @@ Overfull \hbox (4.99255pt too wide) in paragraph at lines 239--239
 
 Overfull \hbox (3.65718pt too wide) in paragraph at lines 239--239
 []|\T1/cmss/m/n/10.95 E| 
+ []
+
+
+Overfull \hbox (4.79698pt too wide) in paragraph at lines 239--239
+[]|\T1/cmss/m/n/10.95 H| 
+ []
+
+
+Overfull \hbox (3.05273pt too wide) in paragraph at lines 239--239
+[]|\T1/cmss/m/n/10.95 L| 
  []
 
 
